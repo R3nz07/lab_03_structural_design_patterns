@@ -10,14 +10,10 @@ package ejercicio_03.problema;
  */
 public class NetworkManager {
 
-    private GameConfig config;
-
-    public NetworkManager() {
-        this.config = new GameConfig(); //  Otra instancia diferente
-        config.setDebugMode(true); // Configuración diferente
-    }
+    
 
     public void connect() {
+        GameConfig config = GameConfig.getInstance();
         System.out.println("Conectando a: " + config.getDatabaseUrl());
         System.out.println("Debug mode: " + config.isDebugMode());
     }

@@ -13,6 +13,7 @@ public class GameConfig {
     private String databaseUrl;
     private boolean debugMode;
     private int maxPlayers;
+    private static GameConfig instance;
 
     // Constructor público permite múltiples instancias
     public GameConfig() {
@@ -44,4 +45,12 @@ public class GameConfig {
     public void setMaxPlayers(int max) {
         this.maxPlayers = max;
     }
+
+    public static GameConfig getInstance() {
+        if (instance == null) {
+            instance = new GameConfig();
+        }
+        return instance;
+    }
 }
+
